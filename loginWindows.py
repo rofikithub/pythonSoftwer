@@ -19,6 +19,9 @@ class Login:
         self.root.resizable(False, False)
         self.root.iconbitmap(r'win.ico')
 
+        def goLink(event):
+                webbrowser.open_new('https://rofikit.com/')
+        
         self.canvas = tk.Frame(self.root, bg='#87A922')
         self.canvas.pack(fill='both', anchor='center', padx=20, pady=30)
         
@@ -53,10 +56,8 @@ class Login:
         link_frame.pack(side='top', fill='both', anchor='s')
         link_label = tk.Label(link_frame, text='Create a new system account', bg='#87A922', fg='white', cursor="hand2")
         link_label.pack(side='bottom',anchor='s')
-        link_label.bind("<Button-1>", self.goLink)
+        link_label.bind("<Button-1>", goLink)
 
-    def goLink(event):
-            webbrowser.open_new('https://rofikit.com/')
 
     def loginAction(self):
         self.root.destroy()
